@@ -34,7 +34,7 @@ export default function ToDoList() {
     }
 
     function moveDown(index){
-        if(index< todoList.length){
+        if(index< todoList.length-1){
             const updatedTodoList= [...todoList]
             let temp = updatedTodoList[index]
             updatedTodoList[index]=updatedTodoList[index+1]
