@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export default function ToDoList() {
 
-    const [todoList,setTodoList] =useState([])
+    const [todoList,setTodoList] =useState(JSON.parse(window.localStorage.getItem("todos"))
+)
     const [todo,setTodo] = useState("")
+
+    useEffect(() =>{
+
+        window.localStorage.setItem("todos",JSON.stringify(todoList))
+
+    },[todoList])
 
 
     function handleTodo(event){
